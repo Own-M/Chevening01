@@ -3,16 +3,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Globe, BookOpen, CheckCircle, Sparkles, PhoneCall, Info, FileText, Users, FileCheck, ClipboardList, Send, Briefcase } from "lucide-react";
+import { GraduationCap, PhoneCall, FileText, Users, FileCheck, ClipboardList, Send, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
 
 // Roadmap Steps Data
 const roadmapSteps = [
@@ -28,7 +22,7 @@ const roadmapSteps = [
 export default function ScholarshipLanding() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
 
-  // Fix: Add proper TypeScript typings
+  // Correctly typed
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -49,27 +43,19 @@ export default function ScholarshipLanding() {
         <p className="text-lg md:text-xl max-w-3xl text-gray-200">
           Fully Funded Scholarship Assistance Program by <span className="text-yellow-400 font-semibold">Gainers Future</span>. Unlock opportunities, explore eligibility, and begin your UK journey today!
         </p>
-        <div className="flex flex-wrap gap-4 mt-8">
-          <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:scale-105 transition-transform duration-300">Apply Now</Button>
-          <Link href="/eligibility"><Button className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:scale-105 transition-transform duration-300">Check Eligibility</Button></Link>
-          <Link href="https://wa.me/8801XXXXXXXXX" target="_blank"><Button className="bg-gradient-to-r from-teal-400 to-cyan-500 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl flex items-center gap-2 hover:scale-105 transition-transform duration-300"><PhoneCall size={18} /> Connect on WhatsApp</Button></Link>
-        </div>
-      </section>
 
-      {/* Features Carousel Section */}
-      <section className="py-16 px-6 md:px-20 bg-gradient-to-r from-indigo-900 via-blue-900 to-purple-900">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white drop-shadow-lg">Why Choose Chevening?</h2>
-        <Swiper spaceBetween={30} slidesPerView={1} breakpoints={{ 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }} className="pb-8">
-          {[{ icon: <GraduationCap size={50} />, title: "Full Tuition Fees", desc: "Complete tuition fee coverage for a UK Master's." }, { icon: <Globe size={50} />, title: "Global Networking", desc: "Join a prestigious Chevening alumni community." }, { icon: <BookOpen size={50} />, title: "Guided Application", desc: "Step-by-step SOP, LOR, and essay support." }, { icon: <CheckCircle size={50} />, title: "Visa & Travel Covered", desc: "Receive monthly stipend, visa and travel costs." }, { icon: <Sparkles size={50} />, title: "Career Boost", desc: "Chevening opens doors to global leadership." }].map((f, i) => (
-            <SwiperSlide key={i}>
-              <motion.div whileHover={{ scale: 1.08, y: -5 }} transition={{ type: 'spring', stiffness: 300 }} className="bg-gradient-to-br from-indigo-700 to-purple-600 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center cursor-pointer">
-                <div className="mb-4 text-yellow-400 drop-shadow-lg animate-bounce">{f.icon}</div>
-                <h3 className="text-2xl font-bold mb-3 text-white drop-shadow-md">{f.title}</h3>
-                <p className="text-gray-200 text-base leading-relaxed">{f.desc}</p>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8 w-full max-w-md">
+          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" className="p-4 rounded-lg text-black" required />
+          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" className="p-4 rounded-lg text-black" required />
+          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" className="p-4 rounded-lg text-black" required />
+          <Button type="submit" className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-4 rounded-2xl font-bold">Submit</Button>
+        </form>
+
+        <div className="flex flex-wrap gap-4 mt-8">
+          <Link href="/eligibility"><Button className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-8 py-4 rounded-2xl font-bold">Check Eligibility</Button></Link>
+          <Link href="https://wa.me/8801XXXXXXXXX" target="_blank"><Button className="bg-gradient-to-r from-teal-400 to-cyan-500 text-white px-8 py-4 rounded-2xl flex items-center gap-2"><PhoneCall size={18} /> Connect on WhatsApp</Button></Link>
+        </div>
       </section>
 
       {/* Roadmap Section */}
@@ -94,20 +80,7 @@ export default function ScholarshipLanding() {
             );
           })}
         </div>
-
-        {/* Call to Action Buttons */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-16">
-          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="https://forms.gle/Md1sa3RTGMRRiQFr9" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 text-lg">
-            Talk With Gainers Future
-          </motion.a>
-
-          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="https://api.whatsapp.com/send?phone=8801813106421" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 text-lg flex items-center gap-2">
-            Connect on WhatsApp
-          </motion.a>
-        </div>
       </section>
-
-      {/* FAQ and Footer sections remain unchanged */}
 
     </div>
   );
