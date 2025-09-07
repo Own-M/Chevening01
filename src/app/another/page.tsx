@@ -148,7 +148,102 @@ export default function ScholarshipLanding() {
       </section>
 
       {/* FAQ and Footer remain unchanged */}
+      {/* FAQ Section */}
+<section className="py-16 px-6 md:px-20 bg-gradient-to-b from-gray-50 to-gray-100">
+  <h2 className="text-4xl font-extrabold text-center mb-10 text-[#1D4ED8] drop-shadow-sm">
+    Chevening Scholarship – FAQ
+  </h2>
+  <Accordion type="single" collapsible className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-6">
+    <AccordionItem value="q1">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        What is the Chevening Scholarship?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Chevening is a UK Government fully funded scholarship offered for one-year Master’s degrees in the UK.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q2">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        Who can apply?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Must be a citizen of Bangladesh (or eligible Chevening country), hold a bachelor’s degree, have at least 2,800 hours of work experience, and return to your home country for at least 2 years after the scholarship.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q3">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        For which degrees can I apply?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Only full-time, one-year Master’s programs in the UK.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q4">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        How many courses should I apply to?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        You must apply to three different Master’s courses at three different UK universities and secure at least one unconditional offer.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q5">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        What documents are required?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Bachelor’s degree certificate & transcripts, proof of work experience, two reference letters, CV/Resume, valid passport, and proof of English proficiency (if required).
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q6">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        Is IELTS/TOEFL mandatory?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Chevening itself does not require IELTS/TOEFL, but most UK universities may require an English test score.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q7">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        What benefits does Chevening provide?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Full tuition fees, monthly living allowance, travel to and from the UK, visa cost, arrival allowance, and access to the global Chevening Alumni Network.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q8">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        When can I apply?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Applications usually open between August–October each year. If you miss the deadline, you must wait until the following year.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q9">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        Who can be my referees?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Your professional supervisor, academic lecturer, or mentor who can comment on your leadership, skills, and character.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="q10">
+      <AccordionTrigger className="text-lg font-semibold text-gray-800">
+        Does Chevening cover all expenses?
+      </AccordionTrigger>
+      <AccordionContent className="text-gray-600 leading-relaxed">
+        Yes – tuition, travel, visa, and allowance are covered. However, personal expenses (leisure, extra travel, hobbies, etc.) are not included.
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+
+</section>
+
+    
+
+      {/* Footer */}
+      <footer className="text-center py-8 text-sm bg-blue-950">© 2025 <span className="text-yellow-400 font-semibold">Gainers Future</span> – Empowering Dreams with Chevening</footer>
 
     </div>
   );
 }
+
