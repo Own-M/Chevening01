@@ -36,7 +36,7 @@ export default function ScholarshipLanding() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center py-20 px-4">
-        <motion.h1 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent drop-shadow-lg">
+        <motion.h1 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-300 to-orange-400 bg-clip-text text-transparent drop-shadow-lg">
           Chevening Scholarship 2025
         </motion.h1>
         <p className="text-lg md:text-xl max-w-3xl text-gray-200">
